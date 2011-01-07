@@ -259,7 +259,7 @@ timestamp		|string	|true	|消息发送时间
 
 ###刷新页面 POST webim/refresh
 
-退出当前连接
+退出当前连接(offline)
 
 ####请求参数
 
