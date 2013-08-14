@@ -1,6 +1,6 @@
-build_service: ${PREFIX}/service/static build_service_customer build_service_visitor
+build_service: ${PREFIX}/service/static/webim.service.js build_service_customer build_service_visitor
 
-${PREFIX}/service/static: ${PREFIX}/service ${UI_DIST_DIR}/service
+${PREFIX}/service/static/webim.service.js: ${PREFIX}/service ${UI_DIST_DIR}/service
 	@@echo "Copy static"
 	@@cp -r ${UI_DIST_DIR}/service ${PREFIX}/service/static
 	@@echo "	"${PREFIX}/service/static
