@@ -3,16 +3,10 @@
 	url = git://github.com/webim/webim-ui.git
 [submodule "uchome"]
 	path = uchome
-	url = git://github.com/webim/webim-for-uchome.git
+	url = git://github.com/webim/webim-plugin-uchome.git
 [submodule "discuzX"]
 	path = discuzX
-	url = git://github.com/webim/webim-for-discuzX.git
+	url = git://github.com/webim/webim-plugin-discuzX.git
 [submodule "php"]
 	path = php
 	url = git://github.com/webim/webim-php.git
-[submodule "discuz"]
-	path = discuz
-	url = git://github.com/webim/webim-for-discuz.git
-[submodule "phpwind"]
-	path = phpwind
-	url = git://github.com/webim/webim-for-phpwind.git
