@@ -16,3 +16,6 @@
 [submodule "dotnet4"]
 	path = dotnet4
 	url = git://github.com/webim/webim-plugin-dotnet4.git
+[submodule "jishigou"]
+	path = jishigou
+	url = git://github.com/webim/webim-plugin-jishigou.git
