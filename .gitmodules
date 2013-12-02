@@ -1,21 +1,24 @@
-[submodule "ui"]
-	path = ui
-	url = git://github.com/webim/webim-ui.git
+[submodule "webim-ui"]
+	path = webim-ui
+	url = git@github.com:webim/webim-ui.git
+[submodule "webim-js"]
+	path = webim-js
+	url = git@github.com:webim/webim-js.git
 [submodule "uchome"]
 	path = uchome
-	url = git://github.com/webim/webim-plugin-uchome.git
+	url = git@github.com:webim/webim-plugin-uchome.git
 [submodule "discuzX"]
 	path = discuzX
-	url = git://github.com/webim/webim-plugin-discuzX.git
+	url = git@github.com:webim/webim-plugin-discuzX.git
 [submodule "php"]
 	path = php
-	url = git://github.com/webim/webim-php.git
+	url = git@github.com:webim/webim-php.git
 [submodule "struts2"]
 	path = struts2
-	url = git://github.com/webim/webim-plugin-struts2.git
+	url = git@github.com:webim/webim-plugin-struts2.git
 [submodule "dotnet4"]
 	path = dotnet4
-	url = git://github.com/webim/webim-plugin-dotnet4.git
+	url = git@github.com:webim/webim-plugin-dotnet4.git
 [submodule "jishigou"]
 	path = jishigou
-	url = git://github.com/webim/webim-plugin-jishigou.git
+	url = git@github.com:webim/webim-plugin-jishigou.git
