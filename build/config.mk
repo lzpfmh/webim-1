@@ -1,4 +1,16 @@
-PREFIX = .
-UI_DIR = ${PREFIX}/webim-ui
-UI_DIST_DIR = ${UI_DIR}/dist
+PREFIX := /Users/erylee/NexTalk/plugins
+
+DATE=`date +%Y%m%d`
+BUILD_DIR=${PREFIX}/build
+DIST_DIR=${PREFIX}/dist
+PRODUCT_DIR=${PREFIX}/${PRODUCT_NAME}
+PRODUCT_DIST_DIR=${DIST_DIR}/${PRODUCT_NAME}
+VERSION=`cd ${PRODUCT_DIR} && git tag | tail -1`
+STATIC_DIR=${PREFIX}/webim-ui/dist/${PRODUCT_NAME}
+REPLACE_VER= sed s/@VERSION/${VERSION}/
+
+REL_DIR=${PRODUCT_DIST_DIR}/${REL}
+REL_STATIC_DIR=${REL_DIR}/${REL_STATIC}
+REL_FILE=webim-for-${PRODUCT_NAME}-${VERSION}-${DATE}.zip
+
 

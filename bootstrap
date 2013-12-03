@@ -1,0 +1,12 @@
+#! /bin/bash
+
+BASE_DIR=$(cd ${0%/*} && pwd)
+
+git submodule update --init
+
+cd $BASE_DIR/webim-js && git checkout api && git pull
+
+cd $BASE_DIR/webim-ui && git checkout api && git pull
+
+cd $BASE_DIR/webim-ui && make && cd $BASE_DIR/build && make
+

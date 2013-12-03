@@ -1,6 +1,6 @@
-PRODUCT_NAME = phpbb
+PRODUCT_NAME = vBulletin
 
-PROJECT_NAME = git@github.com:webim/webim-plugin-phpbb
+PROJECT_NAME = git@github.com:webim/webim-plugin-vBulletin
 
 REL = webim
 

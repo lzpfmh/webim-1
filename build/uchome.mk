@@ -1,19 +1,29 @@
-build_uchome: ${PREFIX}/uchome/static
+PRODUCT_NAME = uchome
 
-${PREFIX}/uchome/static: ${PREFIX}/uchome ${UI_DIST_DIR}/uchome
-	@@echo "Copy static"
-	@@cp -r ${UI_DIST_DIR}/uchome ${PREFIX}/uchome/static
-	@@echo "	"${PREFIX}/uchome/static
+PROJECT_NAME = git@github.com:webim/webim-plugin-uchome
 
-${UI_DIST_DIR}/uchome: ${UI_DIR} 
-	@@echo "Build static..."
-	$(MAKE) uchome -C ${UI_DIR}
+REL = webim
 
-${PREFIX}/uchome:
-	@@git submodule update --init uchome
+REL_STATIC = static
 
-clean_uchome:
-	$(MAKE) clean_uchome -C ${UI_DIR}
-	@@echo "Removing Distribution directory:" ${PREFIX}/uchome/static
-	@@rm -rf ${PREFIX}/uchome/static
+include config.mk
+
+SRC_FILES = ${PRODUCT_DIR}/*.php \
+	    ${PRODUCT_DIR}/*.md \
+	    ${PRODUCT_DIR}/*.js \
+	    ${PRODUCT_DIR}/lib \
+	    ${PRODUCT_DIR}/static \
+	    ${PRODUCT_DIR}/admin \
+	    ${PRODUCT_DIR}/table \
+
+all: deps
+	@@mkdir -p ${REL_DIR}
+	@@cp -r ${SRC_FILES} ${REL_DIR}/
+	@@cp -R ${STATIC_DIR}/* ${REL_STATIC_DIR}/
+	@@cat ${PRODUCT_DIR}/config_sample.php | ${REPLACE_VER} > ${REL_DIR}/config_sample.php
+	@@cat ${PRODUCT_DIR}/common.php | ${REPLACE_VER} > ${REL_DIR}/common.php
+	@@cd ${PRODUCT_DIST_DIR} && zip -r -q  ${REL_FILE} ${REL}
+	@@cd ${PRODUCT_DIST_DIR} && rm -rf ${REL}
+
+include common.mk
 

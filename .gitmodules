@@ -25,3 +25,18 @@
 [submodule "service"]
 	path = service
 	url = git@bitbucket.org:erylee/live.nextalk.im.git
+[submodule "phpwind"]
+	path = phpwind
+	url = git@github.com:webim/webim-plugin-phpwind.git
+[submodule "phpwind9"]
+	path = phpwind9
+	url = git@github.com:webim/webim-plugin-phpwind9.git
+[submodule "thinksns"]
+	path = thinksns
+	url = git@github.com:webim/webim-plugin-thinksns.git
+[submodule "thinkphp"]
+	path = thinkphp
+	url = git@github.com:webim/webim-for-thinkphp.git
+[submodule "jinhusns"]
+	path = jinhusns
+	url = git@github.com:webim/webim-plugin-jinhusns.git

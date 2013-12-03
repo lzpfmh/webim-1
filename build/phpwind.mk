@@ -1,19 +1,31 @@
-build_phpwind: ${PREFIX}/phpwind/static
+PRODUCT_NAME = phpwind
 
-${PREFIX}/phpwind/static: ${PREFIX}/phpwind ${UI_DIST_DIR}/phpwind
-	@@echo "Copy static"
-	@@cp -r ${UI_DIST_DIR}/phpwind ${PREFIX}/phpwind/static
-	@@echo "	"${PREFIX}/phpwind/static
+PROJECT_NAME = git@github.com:webim/webim-plugin-phpwind
 
-${UI_DIST_DIR}/phpwind: ${UI_DIR} 
-	@@echo "Build static..."
-	$(MAKE) phpwind -C ${UI_DIR}
+REL = webim
 
-${PREFIX}/phpwind:
-	@@git submodule update --init phpwind
+REL_STATIC = static
 
-clean_phpwind:
-	$(MAKE) clean_phpwind -C ${UI_DIR}
-	@@echo "Removing Distribution directory:" ${PREFIX}/phpwind/static
-	@@rm -rf ${PREFIX}/phpwind/static
+include config.mk
+
+SRC_FILES = ${PRODUCT_DIR}/*.php \
+	    ${PRODUCT_DIR}/*.md \
+	    ${PRODUCT_DIR}/*.js \
+	    ${PRODUCT_DIR}/lib \
+	    ${PRODUCT_DIR}/static \
+	    ${PRODUCT_DIR}/admin \
+	    ${PRODUCT_DIR}/table \
+
+all: deps
+	@@mkdir -p ${REL_DIR}
+	@@cp -r ${SRC_FILES} ${REL_DIR}/
+	@@rm -rf ${REL_DIR}/lib/.git
+	@@rm -rf ${REL_DIR}/config.php
+	@@cp -R ${STATIC_DIR}/* ${REL_STATIC_DIR}/
+	@@cat ${PRODUCT_DIR}/config_sample.php | ${REPLACE_VER} > ${REL_DIR}/config_sample.php
+	@@cat ${PRODUCT_DIR}/common.php | ${REPLACE_VER} > ${REL_DIR}/common.php
+	@@cd ${PRODUCT_DIST_DIR} && zip -r -q ${REL_FILE} ${REL}
+	@@cd ${PRODUCT_DIST_DIR} && rm -rf ${REL}
+
+include common.mk
 

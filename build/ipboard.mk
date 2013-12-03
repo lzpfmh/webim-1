@@ -1,6 +1,6 @@
-PRODUCT_NAME = phpbb
+PRODUCT_NAME = ipboard
 
-PROJECT_NAME = git@github.com:webim/webim-plugin-phpbb
+PROJECT_NAME = git@github.com:webim/webim-plugin-ipboard
 
 REL = webim
 
