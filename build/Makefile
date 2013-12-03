@@ -1,6 +1,14 @@
-all: discuzX phpwind phpwind9 jishigou thinksns thinkphp uchome 
+all: discuzX phpwind phpwind9 jishigou thinksns thinkphp uchome dotnet4 struts2
 
 #discuz phpbb ipboard vBulletin
+
+struts2: 
+	@@echo "Build webim for Struts2..."
+	@@$(MAKE) -f struts2.mk
+
+dotnet4: 
+	@@echo "Build webim for DotNet4..."
+	@@$(MAKE) -f dotnet4.mk
 
 thinksns: 
 	@@echo "Build webim for ThinkSNS..."
@@ -46,9 +54,17 @@ vBulletin:
 	@@echo "Build webim for vBulletin..."
 	@@$(MAKE) -f vBulletin.mk
 
-clean: clean_thinksns clean_thinkphp clean_jishigou clean_phpwind9 clean_phpwind clean_discuzX clean_uchome 
+clean: clean_struts2 clean_dotnet4 clean_thinksns clean_thinkphp clean_jishigou clean_phpwind9 clean_phpwind clean_discuzX clean_uchome 
 
 #clean_discuz clean_phpbb clean_ipboard clean_vBulletin
+
+clean_struts2:
+	@@echo "Clean Struts2"
+	@@$(MAKE) clean -f struts2.mk
+
+clean_dotnet4:
+	@@echo "Clean DotNet4"
+	@@$(MAKE) clean -f dotnet4.mk
 
 clean_thinksns:
 	@@echo "Clean ThinkSNS"
