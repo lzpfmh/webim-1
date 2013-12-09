@@ -40,3 +40,6 @@
 [submodule "jinhusns"]
 	path = jinhusns
 	url = git@github.com:webim/webim-plugin-jinhusns.git
+[submodule "ci"]
+	path = ci
+	url = git@github.com:webim/webim-for-codeigniter.git
