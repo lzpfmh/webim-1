@@ -22,7 +22,7 @@ SRC_FILES = ${PRODUCT_DIR}/*.md \
 all: 
 	@@mkdir -p ${REL_DIR}
 	@@cp -r ${SRC_FILES} ${REL_DIR}/
-	@@cp -R ${STATIC_DIR}/* ${REL_STATIC_DIR}/
+	#@@cp -R ${STATIC_DIR}/* ${REL_STATIC_DIR}/
 	@@cd ${PRODUCT_DIST_DIR} && zip -r -q  ${REL_FILE} ${REL}
 	@@cd ${PRODUCT_DIST_DIR} && rm -rf ${REL}
 

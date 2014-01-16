@@ -43,3 +43,6 @@
 [submodule "ci"]
 	path = ci
 	url = git@github.com:webim/webim-for-codeigniter.git
+[submodule "rails"]
+	path = rails
+	url = git@github.com:webim/webim-for-rails.git
